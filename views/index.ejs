@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ("partials/header") %>
+    <title>Home-Waltzvee's Chatroom</title>
+  </head>
+  <body>
+    <%- include ("partials/nav") %>
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">
+          Welcome to Waltzvee's Chatroom
+        </h1>
+        <p class="col-md-8 fs-4">
+          This is Waltzvee's first website. He made it from a scratch. Let's see what he did! 
+        </p>
+        <% if (!user) { %>
+        <a href="/auth/signup">
+          <button class="btn btn-primary btn-lg" type="button">
+            SIGN UP!
+          </button>
+        </a>
+        <br>
+          <a href="/auth/login">Already have an account? LOG IN!</a>
+        <% } %>
+        <% if (user) { %>
+          <a href="/chatroom">
+            <button class="btn btn-primary btn-lg" type="button">
+              Let's Chat!
+            </button>
+          </a>
+          <% } %>
+      </div>
+    </div>
+  </body>
